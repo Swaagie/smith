@@ -20,3 +20,7 @@ example, `source $HOME/projects/smith/smith.sh`
 ```
 source [path/to/project/smith.sh]
 ```
+
+## License
+
+MIT
