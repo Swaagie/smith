@@ -7,9 +7,9 @@ function gitName {
   until [ $CURRENT = '/' ]
   do
     if [ -d "$CURRENT$DIRECTORY" ]; then
-      NAME=$(basename $(git remote show -n origin | grep Fetch | cut -d: -f2- | tr -d '.git'))
+      NAME=$(basename $(git remote show -n origin | grep Fetch | cut -d: -f2-))
       BRANCH=$(basename $(git symbolic-ref HEAD))
-      echo -ne "\033]0; $NAME ($BRANCH)\007"
+      echo -ne "\033]0; ${NAME%.git} ($BRANCH)\007"
       break
     fi
 
