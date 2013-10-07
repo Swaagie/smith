@@ -8,7 +8,7 @@ function gitName {
   # Recursively run down directories until we find .git or are at `/`
   #
   unset TITLE
-  until [ $CURRENT = '/' ]
+  until [ "$CURRENT" = '/' ]
   do
     if [ -d "$CURRENT$DIRECTORY" ]
     then
@@ -20,7 +20,7 @@ function gitName {
       break
     fi
 
-    CURRENT=$(dirname $CURRENT)
+    CURRENT=$(dirname "$CURRENT")
   done
 
   # 
