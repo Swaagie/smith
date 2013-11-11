@@ -2,7 +2,7 @@
 
 function gitName {
   DIRECTORY='/.git'
-  CURRENT=`pwd`
+  CURRENT=`pwd -P`
 
   #
   # Recursively run down directories until we find .git or are at `/`
