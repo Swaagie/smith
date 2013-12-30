@@ -18,7 +18,7 @@ function gitName {
       #
       # Submodules will have a different toplevel.
       #
-      if [ $(git rev-parse --show-toplevel) = $CURRENT ]
+      if [ $(git rev-parse --abbrev-ref HEAD) = $CURRENT ]
       then
         TITLE="\033]0; ${NAME%.git} ($(basename "$BRANCH"))\007"
       else
