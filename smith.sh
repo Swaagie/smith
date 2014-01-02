@@ -12,15 +12,15 @@ function gitName {
   do
     if [ -d "$CURRENT$DIRECTORY" ]
     then
-      NAME=$(basename $(git remote show -n origin | grep Fetch | cut -d: -f2-))
-      BRANCH=$(git rev-parse --abbrev-ref HEAD)
+      NAME=$(basename $(git remote show -n origin | grep Push | cut -d: -f2-))
+      BRANCH=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 
       #
       # Submodules will have a different toplevel.
       #
       if [ $(git rev-parse --show-toplevel) = $CURRENT ]
       then
-        TITLE="\033]0; ${NAME%.git} ($(basename "$BRANCH"))\007"
+        TITLE="\033]0; ${NAME%.git} ($BRANCH)\007"
       else
         TITLE="\033]0; $(basename "$CURRENT") (submodule: ${NAME%.git}) \007"
       fi
