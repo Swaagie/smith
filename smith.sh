@@ -14,11 +14,12 @@ function gitName {
     then
       NAME=$(basename $(git remote show -n origin | grep Push | cut -d: -f2-))
       BRANCH=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+      TOP=$(git rev-parse --show-toplevel)
 
       #
       # Submodules will have a different toplevel.
       #
-      if [ $(git rev-parse --show-toplevel) = $CURRENT ]
+      if [ -z "$TOP" ] || [ $TOP = $CURRENT ]
       then
         TITLE="\033]0; ${NAME%.git} ($BRANCH)\007"
       else
