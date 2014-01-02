@@ -19,7 +19,7 @@ function gitName {
       #
       # Submodules will have a different toplevel.
       #
-      if [ -z "$TOP" ] || [ $TOP = $CURRENT ]
+      if [ -z "$TOP" ] || [ "$TOP" = $CURRENT ]
       then
         TITLE="\033]0; ${NAME%.git} ($BRANCH)\007"
       else
