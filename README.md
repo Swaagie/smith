@@ -1,7 +1,7 @@
 # Smith
 
 Show the name of the current/working git repository + branch as terminal title.
-If you like to work with terminal tabs, this repository is ment for you! It will
+If you like to work with terminal tabs, this repository is meant for you! It will
 increase your workflow and provide an overview of the active repository. That's all!
 
 ## Features
